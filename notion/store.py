@@ -328,9 +328,11 @@ class RecordStore(object):
                 "type": type,
             },
             "query": {
-                "aggregate": aggregate,
-                "filter": filter,
-                "filter_operator": filter_operator,
+                "aggregations": aggregate,
+                "filter": {
+                    "operator": filter_operator,
+                    "filters": filter
+                },
                 "sort": sort,
             },
         }
